@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/styles.css' %}">
+
+</head>
+<body>
+    <button>
+        <a href="{% url 'signup' %}">Signup</a>
+    </button>
+    <button>
+        <a href="{% url 'login' %}">Login</a>
+    </button>
+    <h1>Registration Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
